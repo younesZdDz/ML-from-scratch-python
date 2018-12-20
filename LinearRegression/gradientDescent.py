@@ -3,7 +3,7 @@ import numpy as np
 import math
 from ComputeCost import computeCost
 
-def gradientDescent(X, y, theta=[], alpha=0.01, num_iters=1500):
+def gradientDescent(X, y, theta=[], alpha=1, num_iters=10500):
     m = y.size
     J_history = np.zeros(num_iters)
     n=X.shape[1]

@@ -16,6 +16,7 @@ from normalEquation import normalEquation
 data = np.loadtxt('../data/ex1data2.txt', delimiter=',')
 X=data[:,0:-1]
 #X=normalized(X)
+X=normalizeData(X)
 X = np.c_[np.ones(data.shape[0]),X]
 y =np.c_[data[:,-1]]
 
@@ -30,7 +31,8 @@ y =np.c_[data[:,-1]]
 
 
 
-theta = normalEquation(X, y)
+theta,cost = gradientDescent(X, y)
+#theta = normalEquation(X, y)
 print('theta: ',theta)
 
 #plt.plot(Cost_J)

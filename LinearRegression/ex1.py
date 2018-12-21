@@ -31,8 +31,8 @@ y =np.c_[data[:,-1]]
 
 
 
-theta,cost = gradientDescent(X, y)
-#theta = normalEquation(X, y)
+#theta,Cost_J = gradientDescent(X, y)
+theta = normalEquation(X, y)
 print('theta: ',theta)
 
 #plt.plot(Cost_J)

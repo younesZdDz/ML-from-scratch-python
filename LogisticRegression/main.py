@@ -23,7 +23,6 @@ print('////////////////////////////////////////////////////////////////////')
 print('Cost: \n', cost)
 print('Grad: \n', grad)
 
-
 res = minimize(costFunction, initial_theta, args=(X,y), method=None, jac=gradient, options={'maxiter':400})
 print('////////////////////////////////////////////////////////////////////')
 
@@ -48,4 +47,11 @@ plt.contour(xx1, xx2, h, [0.2,0.5,0.7], linewidths=1, colors='b');
 plt.show()
 
 print('////////////////////////////////////////////////////////////////////')
+plotData(data, 'Exam 1 score', 'Exam 2 score', 'Admitted', 'Not admitted')
+x1_min, x1_max = X[:,1].min(), X[:,1].max()
+xx1=np.linspace(x1_min, x1_max)
+xx2=(res.x[0]+res.x[1]*xx1)/(0-res.x[2])
+plt.plot(xx1,xx2)
+plt.show()
 
+print('////////////////////////////////////////////////////////////////////')
